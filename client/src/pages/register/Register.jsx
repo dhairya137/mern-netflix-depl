@@ -9,7 +9,7 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const history = useHistory();
-  axios = axios.create({ baseURL: process.env.API_URL });
+  axios = axios.create({ baseURL: process.env.REACT_APP_API_URL });
 
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -23,40 +23,40 @@ export default function Register() {
     setPassword(passwordRef.current.value);
     setUsername(usernameRef.current.value);
     try {
-      await axios.post("auth/register", { email,username, password });
+      await axios.post("auth/register", { email, username, password });
       history.push("/login");
     } catch (err) {}
   };
   return (
-    <div className="register">
-      <div className="top">
-        <div className="wrapper">
+    <div className='register'>
+      <div className='top'>
+        <div className='wrapper'>
           <img
-            className="logo"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
-            alt=""
+            className='logo'
+            src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png'
+            alt=''
           />
-          <button className="loginButton">Sign In</button>
+          <button className='loginButton'>Sign In</button>
         </div>
       </div>
-      <div className="container">
+      <div className='container'>
         <h1>Unlimited movies, TV shows, and more.</h1>
         <h2>Watch anywhere. Cancel anytime.</h2>
         <p>
           Ready to watch? Enter your email to create or restart your membership.
         </p>
         {!email ? (
-          <div className="input">
-            <input type="email" placeholder="email address" ref={emailRef} />
-            <button className="registerButton" onClick={handleStart}>
+          <div className='input'>
+            <input type='email' placeholder='email address' ref={emailRef} />
+            <button className='registerButton' onClick={handleStart}>
               Get Started
             </button>
           </div>
         ) : (
-          <form className="input">
-            <input type="username" placeholder="username" ref={usernameRef} />
-            <input type="password" placeholder="password" ref={passwordRef} />
-            <button className="registerButton" onClick={handleFinish}>
+          <form className='input'>
+            <input type='username' placeholder='username' ref={usernameRef} />
+            <input type='password' placeholder='password' ref={passwordRef} />
+            <button className='registerButton' onClick={handleFinish}>
               Start
             </button>
           </form>

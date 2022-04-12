@@ -9,7 +9,7 @@ import axios from "axios";
 import { eventNames } from "../../../../api/models/User";
 
 export default function Home() {
-  axios = axios.create({ baseURL: process.env.API_URL });
+  axios = axios.create({ baseURL: process.env.REACT_APP_API_URL });
   const MONTHS = useMemo(
     () => [
       "Jan",
@@ -56,10 +56,10 @@ export default function Home() {
   }, [MONTHS]);
 
   return (
-    <div className="home">
+    <div className='home'>
       <FeaturedInfo />
-      <Chart data={userStats} title="User Analytics" grid dataKey="New User" />
-      <div className="homeWidgets">
+      <Chart data={userStats} title='User Analytics' grid dataKey='New User' />
+      <div className='homeWidgets'>
         <WidgetSm />
         <WidgetLg />
       </div>

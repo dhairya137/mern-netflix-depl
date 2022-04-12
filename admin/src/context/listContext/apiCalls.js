@@ -11,7 +11,7 @@ import {
   getListsSuccess,
 } from "./ListActions";
 
-axios = axios.create({ baseURL: process.env.API_URL });
+axios = axios.create({ baseURL: process.env.REACT_APP_API_URL });
 
 export const getLists = async (dispatch) => {
   dispatch(getListsStart());
