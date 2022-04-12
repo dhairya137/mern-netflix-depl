@@ -28,6 +28,3 @@ jobs:
 
       - name: INSTALL PROJECT DEPENDENCIES
         run: npm install
-
-      - name: Build Client App
-        run: npm run build
