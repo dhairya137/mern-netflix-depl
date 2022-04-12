@@ -30,8 +30,11 @@ jobs:
       - name: INSTALL PROJECT DEPENDENCIES 
         run: npm install
         
+      - name: Install Angular cli
+        run: npm install -g @angular/cli
+        
       - name: Build Admin App
-        run: npm run build
+        run: ng build
 
     
     
