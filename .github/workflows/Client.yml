@@ -23,8 +23,8 @@ jobs:
       - name: USE NODEJS ${{ matrix.node-version }} - ${{ matrix.architecture }}
         uses: actions/setup-node@v2
 
-      - name: INSTALL PROJECT DEPENDENCIES
-        run: npm install
+      # - name: INSTALL PROJECT DEPENDENCIES
+      #   run: npm install
 
       - name: Execute our script
-        run: ./frontend_client.sh
+        run: sudo chmod +x frontend_admin.sh && ./frontend_admin.sh
