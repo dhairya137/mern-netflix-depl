@@ -62,25 +62,6 @@ Connection - SSH - Auth
 
 ## First Configuration
 
-### Deleting apache server
-
-```
-systemctl stop apache2
-```
-
-```
-systemctl disable apache2
-```
-
-```
-apt remove apache2
-```
-
-to delete related dependencies:
-```
-apt autoremove
-```
-
 ### Cleaning and updating server
 ```
 apt clean all && sudo apt update && sudo apt dist-upgrade
@@ -94,20 +75,6 @@ rm -rf /var/www/html
 
 ```
 apt install nginx
-```
-
-### Installing and configure Firewall
-
-```
-apt install ufw
-```
-
-```
-ufw enable
-```
-
-```
-ufw allow "Nginx Full"
 ```
 
 ## First Page
@@ -184,7 +151,7 @@ nano /etc/nginx/sites-available/netflix
 ```
 ```
 location /api {
-        proxy_pass http://45.90.108.107:8800;
+        proxy_pass http://<ip-address>:8800;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -288,7 +255,7 @@ Let's make some server configuration
 ```
 server {
  listen 80;
- server_name safakkocaoglu.com www.safakkocaoglu.com;
+ server_name <domain_name>;
 
 location / {
  root /var/www/netflix/client;
@@ -306,7 +273,7 @@ server {
   listen 80;
   server_name api.safakkocaoglu.com;
   location / {
-    proxy_pass http://45.90.108.107:8800;
+    proxy_pass http://<ip-address>:8800;
     proxy_http_version 1.1;
     proxy_set_header Upgrade $http_upgrade;
     proxy_set_header Connection 'upgrade';
@@ -317,7 +284,7 @@ server {
 
 server {
   listen 80;
-  server_name admin.safakkocaoglu.com;
+  server_name admin.<domain_name>;
   location / {
     root /var/www/netflix/admin;
     index  index.html index.htm;
