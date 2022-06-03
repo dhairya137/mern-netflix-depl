@@ -27,4 +27,4 @@ jobs:
       #   run: npm install
 
       - name: Execute our script
-        run: sudo chmod +x frontend_admin.sh && ./frontend_admin.sh
+        run: sudo chmod +x frontend_client.sh && ./frontend_client.sh

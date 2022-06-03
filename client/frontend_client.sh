@@ -1,9 +1,11 @@
 
 # Frontend Client setup
 pwd
-sudo apt install nodejs -y
-sudo apt install npm -y
+# sudo apt install nodejs -y
+# sudo apt install npm -y
 npm -v
+echo "Installing dependencies"
+npm i
 echo "Delete previous build"
 sudo rm -rf /var/www/netflix/client/*
 echo "building react for production"
