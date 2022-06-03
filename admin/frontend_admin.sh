@@ -12,7 +12,7 @@ echo "building react for production"
 npm run build
 cd build
 echo "copying production build to server"
-mkdir -p /var/www/netflix/admin
+sudo mkdir -p /var/www/netflix/admin
 sudo cp -r * /var/www/netflix/admin
 echo "Copied to server"
 
