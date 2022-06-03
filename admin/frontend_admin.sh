@@ -2,6 +2,7 @@
 # Frontend Admin setup
 pwd
 sudo apt install nodejs -y
+sudo apt install npm -y
 npm -v
 echo "Delete previous build"
 sudo rm -rf /var/www/netflix/admin/*
