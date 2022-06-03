@@ -6,7 +6,7 @@ To connect your VPS server, you can use your server IP, you can create a root pa
 
 ### For MAC OS / Linux / Windows 10 (with openssh)
 
-1. Launch the Terminal app.
+1. Launch the Terminal app..
 2. ```ssh-keygen -t rsa```
 3. Press ```ENTER``` to store the key in the default folder /Users/lamadev/.ssh/id_rsa).
 
